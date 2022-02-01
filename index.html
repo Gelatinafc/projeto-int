@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Amorosa</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+</head>
+
+<body>
+   
+       <div class="container">
+        <div class="content">
+            <img src="../img/icon.png" alt="">
+            <h1>Calculadora Amorosa</h1>
+            <div class="inputarea">
+                <input type="text" placeholder="Seu Nome" id="NameOne" onfocus="this.value = ''">
+                <input type="text" placeholder="Seu Amor" id="NameTwo" onfocus="this.value = ''">
+            </div>
+            <a href="#"onclick="love()">Calcular</a>
+            <p id="print">Sua Porcentagem Amorosa Aparece Aqui</p>
+            <p id="statement"></p>
+        </div>
+    </div>
+    <script>
+        function love(){
+        var name1 = document.getElementById("NameOne").value;
+        var name2 = document.getElementById("NameTwo").value;
+        if(name1.length<=2){
+            alert("Insira no Mínimo 3 Caracteres");
+        }
+        if(name2.length<=2){
+            alert("Insira no Mínimo 3 Caracteres");
+        }
+        else{
+            var random = Math.floor(Math.random()*100);
+            document.getElementById("print").innerHTML = name1 + " e " + name2 + " = " +random + "%" + " De Amor";
+        }    
+         if(random<=10 || random<=34){
+            document.getElementById("statement").innerHTML = "Um Amor Difícil";
+        }
+         else if(random<=35 || random<=50){
+            document.getElementById("statement").innerHTML = "Vale à Pena Insistir";
+        }
+        else if(random<=51 || random<=89){
+            document.getElementById("statement").innerHTML = "O Amor Está no Ar";
+        }
+        else if(random<=89 || random<=100){
+            document.getElementById("statement").innerHTML = "Sua Alma Gêmea";
+        }
+        
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ 
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js" crossorigin=""></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+    <script src="js/init.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
